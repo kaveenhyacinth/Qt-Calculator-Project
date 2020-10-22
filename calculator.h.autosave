@@ -12,6 +12,7 @@ class Calculator
         void substractionMode();
         void calculate();
         int getResult();
+        int getFirstNo();
     private:
         int firstNo;
         int secondNo;

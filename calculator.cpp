@@ -2,41 +2,45 @@
 
 Calculator::Calculator()
 {
-    firstNo = 0.0;
-    secondNo = 0.0;
-    addition = false;
-    substraction = false;
+    this->firstNo = 0;
+    this->secondNo = 0;
+    this->addition = false;
+    this->substraction = false;
 }
 
-void Calculator::setFirstNo(double no) {
-    firstNo = no;
+void Calculator::setFirstNo(int no) {
+    this->firstNo = no;
 }
 
-void Calculator::setSecondNo(double no) {
-    secondNo = no;
+void Calculator::setSecondNo(int no) {
+    this->secondNo = no;
 }
 
 void Calculator::additionMode() {
-    addition = true;
+    this->addition = true;
 }
 
 void Calculator::substractionMode() {
-    substraction = true;
+    this->substraction = true;
 }
 
-double Calculator::calculate() {
-
-    double flag;
-
+void Calculator::calculate() {
     if(addition) {
-        flag = firstNo + secondNo;
+        this->result = firstNo + secondNo;
     }
     else if(substraction) {
-        flag = firstNo - secondNo;
+        this->result = firstNo - secondNo;
+    } else {
+        this->result = 1;
     }
-    else {
-        flag = 0.0;
-    }
+}
 
-    return flag;
+int Calculator::getResult()
+{
+    return this->result;
+}
+
+int Calculator::getFirstNo()
+{
+    return this->firstNo;
 }
